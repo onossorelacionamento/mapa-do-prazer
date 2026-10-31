@@ -1,0 +1,9 @@
+{
+  "name": "mapa-do-prazer",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.cjs",
+    "check": "node --check dist/app.js"
+  }
+}

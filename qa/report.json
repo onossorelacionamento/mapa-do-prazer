@@ -1,0 +1,102 @@
+{
+  "desktopTextEqual": true,
+  "mobileTextEqual": true,
+  "desktopNoOverflow": true,
+  "mobileNoOverflow": true,
+  "initialImagesLoaded": true,
+  "offerImagesLoaded": true,
+  "questionsTested": 9,
+  "offerRedirect": true,
+  "originalDesktop": {
+    "width": 1440,
+    "scroll": 1440,
+    "images": [
+      {
+        "ok": true,
+        "src": "https://imagedelivery.net/709sUuPaO4NBreJR-qFQLA/6cdb436b-06d3-42e9-6939-1e3bf8d80d00/default"
+      },
+      {
+        "ok": true,
+        "src": "https://imagedelivery.net/709sUuPaO4NBreJR-qFQLA/04b05bc7-23dd-4075-eafc-1f7ddb1d0100/default"
+      },
+      {
+        "ok": true,
+        "src": "https://imagedelivery.net/709sUuPaO4NBreJR-qFQLA/0527d75b-23c9-4e40-897c-306f26f3f600/default"
+      },
+      {
+        "ok": true,
+        "src": "https://imagedelivery.net/709sUuPaO4NBreJR-qFQLA/5a60a83f-f2f2-49d5-9100-27a755cc7600/default"
+      }
+    ],
+    "text": "Escolha uma das opções 1 à 9\n🚀 Bem-vindo! Sua jornada começa agora...\nFico feliz em ter você aqui! 👏 Sei que, às vezes, pode parecer difícil falar com uma mulher sem sentir aquele frio na barriga ou o medo de errar… Mas fique tranquilo! Você está no lugar certo. Aqui, você vai descobrir como desenvolver autoconfiança, se comunicar sem insegurança e atrair mulheres de forma natural\nResponda essas perguntas para ver se você será selecionado.\nEm qual faixa etária de idade, você se encaixa?\n-30\n+30"
+  },
+  "localDesktop": {
+    "width": 1440,
+    "scroll": 1440,
+    "images": [
+      {
+        "ok": true,
+        "src": "assets/0657fd2ac829efffb980.webp"
+      },
+      {
+        "ok": true,
+        "src": "assets/43eacf4dd97cddef67bf.webp"
+      },
+      {
+        "ok": true,
+        "src": "assets/d6983ce5c9e8c1469112.webp"
+      },
+      {
+        "ok": true,
+        "src": "assets/e872422734287c808c17.webp"
+      }
+    ],
+    "text": "Escolha uma das opções 1 à 9\n🚀 Bem-vindo! Sua jornada começa agora...\nFico feliz em ter você aqui! 👏 Sei que, às vezes, pode parecer difícil falar com uma mulher sem sentir aquele frio na barriga ou o medo de errar… Mas fique tranquilo! Você está no lugar certo. Aqui, você vai descobrir como desenvolver autoconfiança, se comunicar sem insegurança e atrair mulheres de forma natural\nResponda essas perguntas para ver se você será selecionado.\nEm qual faixa etária de idade, você se encaixa?\n-30\n+30"
+  },
+  "originalMobile": {
+    "width": 390,
+    "scroll": 390,
+    "images": [
+      {
+        "ok": true,
+        "src": "https://imagedelivery.net/709sUuPaO4NBreJR-qFQLA/6cdb436b-06d3-42e9-6939-1e3bf8d80d00/default"
+      },
+      {
+        "ok": true,
+        "src": "https://imagedelivery.net/709sUuPaO4NBreJR-qFQLA/04b05bc7-23dd-4075-eafc-1f7ddb1d0100/default"
+      },
+      {
+        "ok": true,
+        "src": "https://imagedelivery.net/709sUuPaO4NBreJR-qFQLA/0527d75b-23c9-4e40-897c-306f26f3f600/default"
+      },
+      {
+        "ok": true,
+        "src": "https://imagedelivery.net/709sUuPaO4NBreJR-qFQLA/5a60a83f-f2f2-49d5-9100-27a755cc7600/default"
+      }
+    ],
+    "text": "Escolha uma das opções 1 à 9\n🚀 Bem-vindo! Sua jornada começa agora...\nFico feliz em ter você aqui! 👏 Sei que, às vezes, pode parecer difícil falar com uma mulher sem sentir aquele frio na barriga ou o medo de errar… Mas fique tranquilo! Você está no lugar certo. Aqui, você vai descobrir como desenvolver autoconfiança, se comunicar sem insegurança e atrair mulheres de forma natural\nResponda essas perguntas para ver se você será selecionado.\nEm qual faixa etária de idade, você se encaixa?\n-30\n+30"
+  },
+  "localMobile": {
+    "width": 390,
+    "scroll": 390,
+    "images": [
+      {
+        "ok": true,
+        "src": "assets/0657fd2ac829efffb980.webp"
+      },
+      {
+        "ok": true,
+        "src": "assets/43eacf4dd97cddef67bf.webp"
+      },
+      {
+        "ok": true,
+        "src": "assets/d6983ce5c9e8c1469112.webp"
+      },
+      {
+        "ok": true,
+        "src": "assets/e872422734287c808c17.webp"
+      }
+    ],
+    "text": "Escolha uma das opções 1 à 9\n🚀 Bem-vindo! Sua jornada começa agora...\nFico feliz em ter você aqui! 👏 Sei que, às vezes, pode parecer difícil falar com uma mulher sem sentir aquele frio na barriga ou o medo de errar… Mas fique tranquilo! Você está no lugar certo. Aqui, você vai descobrir como desenvolver autoconfiança, se comunicar sem insegurança e atrair mulheres de forma natural\nResponda essas perguntas para ver se você será selecionado.\nEm qual faixa etária de idade, você se encaixa?\n-30\n+30"
+  }
+}
