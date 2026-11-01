@@ -10,7 +10,7 @@
  function go(id, push=true) {
   const node=nodes.get(id);
   if(!node) return;
-  if(node.type==='function') { if(node.data.type==='link') location.assign(node.data.url); return; }
+  if(node.type==='function') { if(node.data.type==='link') { if(window.__stlLoaded&&/lastlink.com/.test(node.data.url)) sentinel('checkout',node.data.url); else location.assign(node.data.url); } return; }
   clearTimeout(timer); cancelAnimationFrame(frame);
   app.innerHTML=data.pages[id];
   if(push) history.pushState({page:id},'', '#'+node.data.slug);
