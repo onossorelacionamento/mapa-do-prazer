@@ -6,7 +6,7 @@
  const data = await response.json();
  const app = document.getElementById('app');
  const nodes = new Map(data.nodes.map(n => [n.id,n]));
- let timer, frame;
+ let timer, frame, progress;
  function go(id, push=true) {
   const node=nodes.get(id);
   if(!node) return;
@@ -25,6 +25,11 @@
     });
    }
    if(el.type==='button'&&el.targetNodeId) container?.addEventListener('click',()=>go(el.targetNodeId));
+   if(el.type==='progress'&&container) {
+    const fill=container.querySelector('[style*="width"]'),end=el.content?.endValue??0;
+    if(fill){fill.style.width=(progress??el.content?.startValue??0)+'%';fill.getBoundingClientRect();fill.style.transition='width .6s ease-out';fill.style.width=end+'%';}
+    progress=end;
+   }
    if(el.type==='redirect'&&el.targetNodeId) timer=setTimeout(()=>go(el.targetNodeId), (el.content.delay||0)*1000);
    if(el.type==='loading'&&container) {
     const bar=container.firstElementChild;
