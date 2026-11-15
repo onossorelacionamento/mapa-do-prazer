@@ -7,12 +7,34 @@
  const app = document.getElementById('app');
  const nodes = new Map(data.nodes.map(n => [n.id,n]));
  let timer, frame, progress;
+
+ // Etapas do quiz para o painel (Eventos > Funil do quiz): numero e nome de cada pagina.
+ const QUIZ='mapa-do-prazer';
+ const STEPS={
+  '488e44e2-e362-45dc-afff-32c91a9d03d6':[1,'Idade'],
+  '54e6dee9-203c-4fcd-b7d2-c41aa1862aad':[2,'Estado civil'],
+  'fe186562-19d8-46d1-a28e-c7d372779ede':[3,'Satisfação com a vida amorosa'],
+  '01ddfa1a-cf30-4f47-ae62-aaa3c2fa84c0':[4,'Iniciar uma conversa'],
+  '0b701992-1a48-4794-bb06-3349603b00af':[5,'Rejeição'],
+  'e2247385-0e8b-4c59-8795-0a0a94940ce3':[6,'Preferem outros homens'],
+  'f0758e08-daa0-4ac4-b0fb-e0ef9221e65d':[7,'42 gatilhos da sedução'],
+  '4123b3ac-f9d3-41ac-87ef-00f02c1b04ad':[8,'Para que usaria os gatilhos'],
+  '49172bbf-98aa-477d-b426-13e3fa1a20e2':[9,'Compromisso de sigilo'],
+  'b8f1e98c-1eec-4e5b-b3c8-5ab71fdcd86a':[10,'Analisando respostas'],
+  'b8f28533-e02d-48da-b50e-f536769ebe77':[11,'Oferta']
+ };
+ function track(name, id, extra) {
+  const step=STEPS[id];
+  if(!step) return;
+  try { window.sentinel('track', name, Object.assign({quiz:QUIZ, n:step[0], etapa:step[1]}, extra)); } catch {}
+ }
  function go(id, push=true) {
   const node=nodes.get(id);
   if(!node) return;
   if(node.type==='function') { if(node.data.type==='link') { if(window.__stlLoaded&&/lastlink.com/.test(node.data.url)) sentinel('checkout',node.data.url); else location.assign(node.data.url); } return; }
   clearTimeout(timer); cancelAnimationFrame(frame);
   app.innerHTML=data.pages[id];
+  track('quiz_etapa', id);
   if(push) history.pushState({page:id},'', '#'+node.data.slug);
   window.scrollTo({top:0,behavior:'instant'});
   for(const el of node.data.elements) {
@@ -20,6 +42,7 @@
    for(const option of el.content?.options||[]) {
     const button=document.getElementById(option.id);
     button?.addEventListener('click',()=> {
+     track('quiz_resposta', id, {resposta:(button.textContent||'').replace(/\s+/g,' ').trim().slice(0,80)});
      try {const answers=JSON.parse(sessionStorage.getItem('mapa-respostas')||'{}');answers[el.id]=option.id;sessionStorage.setItem('mapa-respostas',JSON.stringify(answers));} catch {}
      go(option.targetNodeId);
     });
