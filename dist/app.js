@@ -28,7 +28,14 @@
   if(!step) return;
   try { window.sentinel('track', name, Object.assign({quiz:QUIZ, n:step[0], etapa:step[1]}, extra)); } catch {}
  }
+ // Quem respondeu "Nao" ao compromisso de sigilo nao volta a ver a oferta, nem recarregando.
+ const RECUSA='624d5fb7-9ddf-5e6c-b029-78cae3d08be5', BLOQUEIO='mapa-recusou';
+ const OFERTA=['b8f1e98c-1eec-4e5b-b3c8-5ab71fdcd86a','b8f28533-e02d-48da-b50e-f536769ebe77','a48ec6dd-dde3-4fcc-88d3-f59fb767d93c'];
+ let recusaAqui=false; // vale nesta visita mesmo sem localStorage
+ function recusou() { if(recusaAqui) return true; try { return localStorage.getItem(BLOQUEIO)==='1'; } catch { return false; } }
  function go(id, push=true) {
+  if(id===RECUSA) { recusaAqui=true; try { localStorage.setItem(BLOQUEIO,'1'); } catch {} }
+  else if(OFERTA.includes(id)&&recusou()) id=RECUSA;
   const node=nodes.get(id);
   if(!node) return;
   if(node.type==='function') { if(node.data.type==='link') { if(window.__stlLoaded&&/lastlink.com/.test(node.data.url)) sentinel('checkout',node.data.url); else location.assign(node.data.url); } return; }
